@@ -3,90 +3,89 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  font-family: "Noto Sans", sans-serif;
 }
 
 body {
-  font-family: "Noto Sans", sans-serif;
   font-size: 25px;
   font-weight: 400;
-  line-height: 34.05px;
+  line-height: 1.36;
   text-align: left;
   background-color: #E4EEF1;
   color: #333;
 }
 
 header {
+  height: 15vh;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  padding: 1rem;
   background-color: #FF69B4;
   color: #E4EEF1;
   transition: background-color 0.3s ease-in-out;
 }
-
 header:hover {
   background-color: #c70968;
 }
-
-header .logo img {
-  width: 20%;
+header section {
+  display: flex;
+  align-items: center;
 }
-
+header nav {
+  width: 40%;
+}
 header nav ul {
   display: flex;
-  list-style: none;
+  justify-content: space-between;
 }
-
-header nav ul li + li {
-  margin-left: 1rem;
-}
-
 header nav ul a {
   color: #E4EEF1;
-  text-decoration: none;
-  font-weight: bold;
+  font-size: 28px;
 }
 
-section {
+.sessaoPrevencao {
+  height: 50vh;
   display: flex;
+  justify-content: space-around;
   align-items: center;
-  justify-content: space-evenly;
-}
-
-main {
-  padding: 2rem;
   background-color: #FFD9EC;
 }
-main .intro {
-  margin-bottom: 2rem;
-  padding: 1rem;
-  display: flex;
-  align-items: center;
-  font-size: 1.8rem;
-  line-height: 1.9;
+.sessaoPrevencao p {
+  width: 40%;
+  font-size: 25px;
 }
-main .intro, main .intro2, main img {
+.sessaoPrevencao img {
   border-radius: 8px;
 }
-main .intro2 {
-  background-color: #FF69B4;
+
+.sessaoCorrida {
+  height: 35vh;
   display: flex;
+  justify-content: space-around;
   align-items: center;
-  justify-content: space-between;
-  padding: 2rem;
-  margin-bottom: 2rem;
+  background-color: #FF69B4;
 }
-main .intro2 p {
+.sessaoCorrida p {
+  width: 50%;
+  font-size: 25px;
   color: #E4EEF1;
-  font-size: 1.8rem;
-  line-height: 1.9;
 }
+.sessaoCorrida img {
+  border-radius: 8px;
+}
+
 main .cards {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+main .card {
+  flex: 1;
+  margin: 10px;
+  max-width: calc(25% - 20px);
+  box-sizing: border-box;
 }
 
 footer {
@@ -97,14 +96,94 @@ footer {
   background-color: #FF69B4;
   color: #E4EEF1;
   text-align: center;
+  transition: background-color 0.3s ease-in-out;
 }
-footer .footer-content {
-  flex: 1;
+footer:hover {
+  background-color: #c70968;
 }
-footer .social-media {
+footer .conteudo-rodape {
+  flex: 3;
+}
+footer .redesSociais {
   display: flex;
   gap: 1rem;
 }
-footer .social-media img {
+footer .redesSociais img {
   width: 30px;
+}
+
+@media (max-width: 992px) {
+  body {
+    font-size: 20px;
+  }
+  header {
+    height: auto;
+    flex-direction: column;
+    padding: 1rem 0;
+  }
+  header nav {
+    width: 95%;
+  }
+  header nav ul {
+    flex-direction: column;
+  }
+  header nav ul a {
+    font-size: 22px;
+    padding: 10px 0;
+  }
+  .sessaoPrevencao, .sessaoCorrida {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+  }
+  .sessaoPrevencao p, .sessaoCorrida p {
+    width: 90%;
+    font-size: 20px;
+    text-align: center;
+  }
+  .cards {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+  }
+  .cards img {
+    width: 30%;
+    height: auto;
+  }
+  footer {
+    flex-direction: column;
+  }
+  footer .conteudo-rodape {
+    text-align: center;
+  }
+  footer .redesSociais {
+    justify-content: center;
+    margin-top: 10px;
+  }
+}
+@media (max-width: 576px) {
+  body {
+    font-size: 18px;
+  }
+  header {
+    padding: 0.5rem 0;
+  }
+  .sessaoPrevencao p, .sessaoCorrida p {
+    font-size: 18px;
+  }
+  .cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .cards .card {
+    max-width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+  }
+  footer {
+    padding: 0.5rem;
+  }
 }/*# sourceMappingURL=style.css.map */
